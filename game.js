@@ -3,25 +3,11 @@ var wordArr = ["Fizz","Buzz","Whizz"];
 
 function calculate (num) {
 	var result = "";
-	if(ruleOne(num)==false){
-		if(num%(specNum[0]*specNum[1]*specNum[2])==0){
-			result="FizzBuzzWhizz";
-		}
-		else if(num%(specNum[0]*specNum[1])==0){
-			result="FizzBuzz";
-		}else if(num%(specNum[1]*specNum[2])==0){
-			result="BuzzWhizz";
-		}else if(num%(specNum[0]*specNum[2])==0){
-			result="FizzWhizz";
-		}
-		else if(num%specNum[0]==0){
-			result="Fizz";
-		}else if(num%specNum[1]==0){
-			result="Buzz";
-		}else if(num%specNum[2]==0){
-			result="Whizz";
+	if(ruleOne(num)==""){
+		if(ruleTwo(num)==""){
+			result=ruleThree(num);
 		}else{
-			result=num;
+			result=ruleTwo(num);
 		}
 	}else{
 		result=ruleOne(num);
@@ -30,9 +16,18 @@ function calculate (num) {
 }
 
 function ruleOne(num){
-	result=num.toString().indexOf(specNum[0].toString())!=-1?wordArr[0]:false;
+	result=num.toString().indexOf(specNum[0].toString())!=-1?wordArr[0]:"";
 	return result;
 }
 
+function ruleTwo(num){
+	result = specNum.reduce(function(p,c,i){
+		return p += (num%c)?"":wordArr[i];
+	},"")
+	return result;
+}
 
+function ruleThree(num){
+	return num;
+}
 
