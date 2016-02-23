@@ -42,4 +42,10 @@ describe('calculate_median_spec', function() {
     var result = calculate(35);
     expect(result).toEqual("Fizz");
   }); 
+
+  it('当报数不符合以上规则时，输出数字本身',function () {
+    var result = calculate(2);
+    expect(result).toEqual("2");
+  });
+  
 });
