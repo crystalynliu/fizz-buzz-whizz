@@ -1,7 +1,8 @@
-var specNum = [3,5,7];
+// var specNum = [3,5,7];
+
 var wordArr = ["Fizz","Buzz","Whizz"];
 
-function calculate (num) {
+function calculate (num,specNum) {
 	var result = "";
 	if(ruleOne(num)==""){
 		if(ruleTwo(num)==""){

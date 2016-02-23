@@ -9,9 +9,12 @@
 		
 	</div>
 <script type="text/javascript" src="game.js"></script>
+<script type="text/javascript" src="radom.js"></script>
 <script type="text/javascript">
+	specNum = getSpecNum();
+	addTAG("特殊数字为："+specNum);
 	for(num=1;num<=100;num++){
-		result=calculate(num);
+		result=calculate(num,specNum);
 		addTAG(result);
 	}
 	function addTAG (result) {
