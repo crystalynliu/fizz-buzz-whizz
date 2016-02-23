@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>报数</title>
+</head>
+<body>
+	<div id="num">
+		
+	</div>
+<script type="text/javascript" src="game.js"></script>
+<script type="text/javascript">
+	for(num=1;num<=100;num++){
+		result=calculate(num);
+		addTAG(result);
+	}
+	function addTAG (result) {
+		var para=document.createElement("p");
+		var node=document.createTextNode(result);
+		para.appendChild(node);
+
+		var element=document.getElementById("num");
+		element.appendChild(para);
+	}
+</script>
+</body>
+</html>
