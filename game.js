@@ -1,4 +1,3 @@
-// var specNum = [3,5,7];
 
 var wordArr = ["Fizz","Buzz","Whizz"];
 
