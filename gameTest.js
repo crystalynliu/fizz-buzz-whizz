@@ -28,13 +28,18 @@ describe('calculate_median_spec', function() {
     expect(result).toEqual("BuzzWhizz");
   }); 
 
+  it('当报数同时是第一个数和第三个数的倍数时，输出单词FizzWhizz', function() {
+    var result = calculate(21);
+    expect(result).toEqual("FizzWhizz");
+  }); 
+
   it('当报数同时是第一个数、第二个数和第三个数的倍数时，输出单词FizzBuzzWhizz', function() {
     var result = calculate(105);
-    expect(result).toEqual("BuzzWhizz");
+    expect(result).toEqual("FizzBuzzWhizz");
   });
 
   it('当报数包含第一个数，忽略其他规则，输出单词Fizz', function() {
     var result = calculate(35);
-    expect(result).toEqual("BuzzWhizz");
+    expect(result).toEqual("Fizz");
   }); 
 });
